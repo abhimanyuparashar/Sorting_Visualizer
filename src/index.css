@@ -1,0 +1,46 @@
+*{margin :0 ; padding:0;box-sizing :border-box;}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(20, 90, 99) !important; 
+}
+
+h1{
+    background-color: rgb(227, 224, 235);
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+    color:  rgb(20, 90, 99);
+}
+
+.arr_container{
+    position: fixed;
+    margin-left :210px;
+    height: 100%;
+    background-color: teal;
+    border-radius: 10px;
+    padding-top: 95px;
+}
+.bar{   
+    background-color: rgb(50, 221, 50);
+    position: relative;
+    width : 20px;
+    display: inline-block;
+    margin: 0 2px;
+    border-radius: 10px;
+}
+.buttons{
+    padding-top: 20px;
+    background-color: rgb(32, 9, 59);
+    width: 200px;
+    text-align: center;
+    height: 692px;
+    border-radius: 10px;
+}
+h5{
+    color: white;
+    background-color: brown;
+    border-radius: 10px;
+    width: unset;
+}
