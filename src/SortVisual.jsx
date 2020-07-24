@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Slider from '@material-ui/core/Slider';
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let arr = [];
 let div_id = [];
 var speed = 10;    
 var c_delay=0;
 var size = 55;
+var p;
 const Resetarr = (ar) =>{
     div_id = [];
     for(let i = 0; i <size; i++){
@@ -13,18 +15,30 @@ const Resetarr = (ar) =>{
         ar.push(a);
         div_id.push(a.toString() + "px");
     }
+    console.log(div_id);
 }
-
 Resetarr(arr);
 const SortVisual = () =>{
     const [carr,setarr] = useState(arr);
-    const [currArr,updatedArr] = useState(carr);
     const [cspeed,setspeed]  = useState(speed);
+    const inputEvent = (value)=>{
+        let newspeed = value;
+        setspeed(newspeed);
+        return cspeed;
+    }
     var delay_time=10000/(Math.floor(size/10)*cspeed); 
     const div_update = (cont,height,color)=>{
-        setTimeout(function(){
+        p = setTimeout(function(){
             cont.style=" height:" + height + "; background-color:" + color + ";";
         },c_delay+=delay_time);
+    }
+    const newarr = () =>{
+        let k = [];
+        Resetarr(k);
+        setarr(k);  
+    }
+    const stop_sort = () =>{
+        window.location.reload(true);
     }
     function swap(ar,div_id,first_Index, second_Index){
         let temp = ar[first_Index];
@@ -60,7 +74,6 @@ const SortVisual = () =>{
     }
     function merge(a,start,mid,end){
         let temp = [];
-    
         let i = start;
         let j = mid+1;
         let k = 0;
@@ -116,40 +129,52 @@ const SortVisual = () =>{
            merge(a,start,mid,end);
         }
     }
+
+    let insertionSort = (inputArr) => {
+        let length = inputArr.length;
+        for (let i = 1; i < length; i++) {
+            let key = inputArr[i];
+            let k1 = document.getElementById(i.toString());
+            div_update(k1,div_id[i],"yellow");
+            let j = i - 1;
+            while (j >= 0 && inputArr[j] > key) {
+                inputArr[j + 1] = inputArr[j];
+                div_id[j+1] = inputArr[j+1].toString() + "px";
+                let k2 = document.getElementById((j+1).toString());
+                div_update(k2,div_id[j+1],"red");
+                div_update(k2,div_id[j+1],"green");
+                j = j - 1;
+            }
+            inputArr[j + 1] = key;
+            div_id[j+1] = inputArr[j+1].toString() + "px";
+            let k2 = document.getElementById((j+1).toString());
+            div_update(k2,div_id[j+1],"rgb(29, 199, 29);");
+        }
+        return inputArr;
+    };
     const Arrbar = (val,i) =>{
         return(<div className = "bar" id = {i.toString()} key = {i}    
         style = {{height :`${val}px`}}></div>);    
     }
     
-    const inputEvent = (value)=>{
-        let newspeed = value;
-        setspeed(newspeed);
-        return newspeed;
-    }
-    
-    const newarr = () =>{
-        let k = [];
-        Resetarr(k);
-        setarr(k);  
-    }
-    
     const quick_sort = () =>{
 
     }
-    const heap_sort = () =>{
-
+    const insertion_sort = () =>{
+        let isorted = insertionSort(carr);
+        setarr(isorted);
 
     }
     const bubble_sort = () =>{
         let bsorted =  bubbleSort(carr);
-        updatedArr(bsorted);
+        setarr(bsorted);
         console.log(carr);
     }
     const merge_sort = () =>{
         let start = 0;
         let end = carr.length-1;
         mergesort(carr,start,end);
-        updatedArr(carr);
+        setarr(carr);
         console.log(carr);
     }
     
@@ -166,13 +191,16 @@ const SortVisual = () =>{
                 <button onClick = {quick_sort} className = "btn btn-danger">Quick Sort</button>
                 <br></br>
                 <br></br>
-                <button onClick = {heap_sort} className = "btn btn-danger">Heap Sort</button>
+                <button onClick = {insertion_sort} className = "btn btn-danger">Insertion Sort</button>
                 <br></br>
                 <br></br> 
                 <button onClick = {bubble_sort} className = "btn btn-danger">Bubble Sort</button>
                 <br></br>
                 <br></br>
                 <button onClick = {newarr} className = "btn btn-warning">New Array</button>
+                <br></br>
+                <br></br>
+                <button onClick = {stop_sort} className = "btn btn-warning">Stop</button>
                 <br></br>
                 <br></br>
                 <br></br>
