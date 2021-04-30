@@ -4,42 +4,70 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let arr = [];
 let div_id = [];
-var speed = 10;    
+var speed = 0;    
 var c_delay=0;
-var size = 55;
+var size = 10;
 var p;
-const Resetarr = (ar) =>{
-    div_id = [];
-    for(let i = 0; i <size; i++){
-        let a = (Math.floor(Math.random() * 600) + 10);
-        ar.push(a);
-        div_id.push(a.toString() + "px");
-    }
-    console.log(div_id);
-}
-Resetarr(arr);
+
+// Resetarr(arr);
 const SortVisual = () =>{
+    c_delay = 0;
     const [carr,setarr] = useState(arr);
     const [cspeed,setspeed]  = useState(speed);
-    const inputEvent = (value)=>{
-        let newspeed = value;
-        setspeed(newspeed);
-        return cspeed;
+    const [csize,setsize] = useState(size);
+    var delay_time  = 10000/(Math.floor(size/10)*cspeed);
+    const Resetarr = (ar) =>{
+        div_id = [];
+        for(let i = 0; i < csize; i++){
+            let a = (Math.floor(Math.random() * 700) + 10);
+            ar.push(a);
+            div_id.push(a.toString() + "px");
+        }
+        console.log(div_id);
     }
-    var delay_time=10000/(Math.floor(size/10)*cspeed); 
+    const inputEvent1 = (value)=>{
+        speed = value;
+        setspeed(value);
+        return value;
+    }
+
+    const inputEvent2 = (value)=>{
+        setsize(value);
+        return csize;
+    }
+
+    console.log(csize);
     const div_update = (cont,height,color)=>{
         p = setTimeout(function(){
-            cont.style=" height:" + height + "; background-color:" + color + ";";
+            cont.style=" height:" + height + "; background-color:" + color;
         },c_delay+=delay_time);
     }
+
     const newarr = () =>{
         let k = [];
         Resetarr(k);
         setarr(k);  
+        clearTimeout(p);
+        // let x;
+        // if(size <= 30){
+        //     x = (csize)*(4/6);
+        // }
+        // else{
+        //     x = (csize)*1/15;
+        // }
+        // x = x.toString() +"px";
+    
+        // for(var i = 0; i < csize; i++){
+        //     var bar1 = document.getElementById(i.toString());
+        //     if(bar1 != null){
+        //         bar1.style.width = x;
+        //     }
+        // }
     }
-    const stop_sort = () =>{
-        window.location.reload(true);
-    }
+
+    // const stop_sort = () =>{
+        
+    // }
     function swap(ar,div_id,first_Index, second_Index){
         let temp = ar[first_Index];
         ar[first_Index] = ar[second_Index];
@@ -57,13 +85,14 @@ const SortVisual = () =>{
             i, j, stop;
     
         for (i = 0; i < len; i++){
+            let k1,k2;
             for (j = 0, stop=len-i; j < stop; j++){
                 let a = parseInt(div_id[j], 10);
                 let b = parseInt(div_id[j+1], 10);
                 if (a > b){         
                     swap(ar,div_id,j, j+1);
-                    let k1 = document.getElementById(j.toString());
-                    let k2 = document.getElementById((j+1).toString());
+                    k1 = document.getElementById(j.toString());
+                    k2 = document.getElementById((j+1).toString());
                     div_update(k1,div_id[j],"rgb(29, 199, 29);");
                     div_update(k2,div_id[j+1],"rgb(29, 199, 29);");
                 }
@@ -157,9 +186,6 @@ const SortVisual = () =>{
         style = {{height :`${val}px`}}></div>);    
     }
     
-    const quick_sort = () =>{
-
-    }
     const insertion_sort = () =>{
         let isorted = insertionSort(carr);
         setarr(isorted);
@@ -180,15 +206,12 @@ const SortVisual = () =>{
     
     return(
         <>
-            <h1>Sorting Visulizer</h1>
+            <h1>Sorting Visuilizer</h1>
             <div className = "arr_container">
                 {carr.map(Arrbar)}
             </div>
             <div className = "buttons">
                 <button onClick = {merge_sort} className = "btn btn-danger">Merge Sort</button>
-                <br></br>
-                <br></br>
-                <button onClick = {quick_sort} className = "btn btn-danger">Quick Sort</button>
                 <br></br>
                 <br></br>
                 <button onClick = {insertion_sort} className = "btn btn-danger">Insertion Sort</button>
@@ -200,21 +223,26 @@ const SortVisual = () =>{
                 <button onClick = {newarr} className = "btn btn-warning">New Array</button>
                 <br></br>
                 <br></br>
-                <button onClick = {stop_sort} className = "btn btn-warning">Stop</button>
-                <br></br>
-                <br></br>
-                <br></br>
                 <Slider
-                    defaultValue={80}
-                    getAriaValueText={inputEvent}
+                    defaultValue={50}
+                    getAriaValueText={inputEvent1}
                     aria-labelledby="discrete-slider-always"
                     step={5}
                     valueLabelDisplay="on"
                 />
-                <h5>Speed</h5>
+                <h4>Speed</h4>
+                <br></br>
+                <br></br>
+                <Slider
+                    defaultValue={0}
+                    getAriaValueText={inputEvent2}
+                    aria-labelledby="discrete-slider-always"
+                    step={10}
+                    valueLabelDisplay="on"
+                />
+                <h4>Array Size</h4>
             </div>
         </>
     );
 }
-
 export default SortVisual;

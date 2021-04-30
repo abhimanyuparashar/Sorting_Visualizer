@@ -2,43 +2,43 @@
 
 body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(20, 90, 99) !important; 
+    background-color: rgb(155, 209, 206) !important; 
 }
 
 h1{
-    background-color: rgb(227, 224, 235);
+    background-color: rgb(155, 209, 206);
     height: 60px;
     border-radius: 10px;
     text-align: center;
     padding-top: 5px;
-    color:  rgb(20, 90, 99);
+    color:  rgb(31, 28, 28);
 }
 
 .arr_container{
     position: absolute;
     margin-left :210px;
     height: 720px;
-    background-color: teal;
     border-radius: 10px;
-    padding-top: 95px;
+    padding-top: 6px;
 }
 .bar{   
-    background-color: rgb(50, 221, 50);
+    background-color:rgb(29, 199, 29);
     position: static;
-    width : 20px;
-    display: inline-block;
-    margin: 0 2px;
+    float :left;
+    margin:2px;
+    width: 9.222px;
     border-radius: 10px;
 }
 .buttons{
     padding-top: 20px;
-    background-color: rgb(32, 9, 59);
+    background-color: rgb(31, 28, 28);
     width: 200px;
     text-align: center;
     height: 720px;
     border-radius: 10px;
+    margin-left: 3px;
 }
-h5{
+h4{
     color: white;
     background-color: brown;
     border-radius: 10px;

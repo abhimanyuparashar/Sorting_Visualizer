@@ -6,7 +6,7 @@ function Temp(){
         setcount(count++);
     }
     return (<div>
-    <h1>Sorting Visulizer</h1>
+    <h1>Sorting Visuilizer</h1>
         <button onClick = {updateCount}>{cCount}</button>
     </div>);
 }
