@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sorting Visualizer
+This is a Web Application which lets you visualize different sorting algorithm.
 
-## Available Scripts
+It has a very user friendy UI. It is Self-Explanatory and easy to understand. 
 
-In the project directory, you can run:
+It contains features for changing the size of the array and adjusting
+the speed of animation.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Interface
+The Web page is divided into 2 parts:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Navigation Bar : Multiple options to choose like adjusting speed of the array,sorting algorithm etc.  
+* Animation Area : Here is the place where the action happens.Mainly for visualizing the animation.
 
-### `npm test`
+## Buttons
+1. Merge Sort Button :- This button is click based button.When this button is clicked we will see the merge sort algorithm in action. Most importantly We will be able visualize the recusrsive nature of the algorithm.
+2. Insertion Sort Button :- This button is click based button.When this button is clicked we will see the Insertion sort algorithm in action.
+3. Bubble Sort Button :-This button is click based button.When this button is clicked we will see the Bubble sort algorithm in action. The red colour is used to shows on which node we currently are and how exactly the swaping is done.
+4. Array Size Button :- This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. Accordingly the size of the array will be shown.
+5. Speed Button :- This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. After selecting we will be able to visualize animation at the chosen speed.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Methadology Flow Chart
+![image](https://user-images.githubusercontent.com/68697068/134036183-328ce9a6-9815-47a0-974f-6c5af1551ab1.png)
 
-### `npm run build`
+## I/O Screenshots
+### Intial Page
+![image](https://user-images.githubusercontent.com/68697068/134037430-c33c3036-1a28-4df4-b058-b53aa22ddbf4.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Array Size and Speed Selected.
+![image](https://user-images.githubusercontent.com/68697068/134038093-d33dbb36-dee9-403c-853d-43cb4c904ee2.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### New Array Clicked
+![image](https://user-images.githubusercontent.com/68697068/134036907-fb95a28d-6390-429c-a3a1-3926e7d33064.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Bubble Sorting Algo in Action 
 
-### `npm run eject`
+After Clicking
+![image](https://user-images.githubusercontent.com/68697068/134038213-1b1f405f-f7ec-4bd1-a91c-43039260e722.png)
+After Sorting
+![image](https://user-images.githubusercontent.com/68697068/134038687-c37a0fdf-38c4-4b5c-b142-901de1475581.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Merge Sorting Algo in Action 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After Clicking
+![image](https://user-images.githubusercontent.com/68697068/134038902-e5067dec-e786-4c94-9d05-80940e683723.png)
+![image](https://user-images.githubusercontent.com/68697068/134038975-1e3c8699-74d1-45bd-8d5b-8fe3ff781768.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+After Sorting
+![image](https://user-images.githubusercontent.com/68697068/134039188-0b7826cb-4be0-4dd4-b37e-b7c82fb5f350.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Insertion Sorting Algo in Action 
 
-## Learn More
+After Clicking
+![image](https://user-images.githubusercontent.com/68697068/134039255-ba693240-3abe-4ed6-a651-0373dedc8aeb.png)
+![image](https://user-images.githubusercontent.com/68697068/134039292-167e129a-4f3b-4c46-9acf-311dc1b7aeb8.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After Sorting
+![image](https://user-images.githubusercontent.com/68697068/134039526-8c752edb-1ea9-4664-8a7d-3a467d8a470f.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
