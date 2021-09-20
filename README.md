@@ -1,24 +1,31 @@
-# Sorting Visualizer
-This is a Web Application which lets you visualize different sorting algorithm.
+<h1>Sorting Visualizer</h1>
+This is a Web Application which lets you visualize different sorting algorithms like Bubble Sort, Merge Sort, etc.
 
-It has a very user friendy UI. It is Self-Explanatory and easy to understand. 
-
-It contains features for changing the size of the array and adjusting
+## Features
+* Highly user friendy interface. 
+* Self-Explanatory and easy to understand.
+* Contains features for changing the size of the array and adjusting
 the speed of animation.
+* Supports different sorting algorithms.
 
 
 ## User Interface
 The Web page is divided into 2 parts:
 
-* Navigation Bar : Multiple options to choose like adjusting speed of the array,sorting algorithm etc.  
-* Animation Area : Here is the place where the action happens.Mainly for visualizing the animation.
+* **Navigation Bar** :  Multiple options to choose like adjusting speed of the array,sorting algorithm etc.  
+
+* **Animation Area** : Here is the place where the action happens. Mainly for visualizing the animation.
 
 ## Buttons
-1. Merge Sort Button :- This button is click based button.When this button is clicked we will see the merge sort algorithm in action. Most importantly We will be able visualize the recusrsive nature of the algorithm.
-2. Insertion Sort Button :- This button is click based button.When this button is clicked we will see the Insertion sort algorithm in action.
-3. Bubble Sort Button :-This button is click based button.When this button is clicked we will see the Bubble sort algorithm in action. The red colour is used to shows on which node we currently are and how exactly the swaping is done.
-4. Array Size Button :- This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. Accordingly the size of the array will be shown.
-5. Speed Button :- This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. After selecting we will be able to visualize animation at the chosen speed.
+1. **Merge Sort Button** : This button is click based button. When this button is clicked we will see the merge sort algorithm in action. Most importantly We will be able visualize the recusrsive nature of the algorithm.
+
+2. **Insertion Sort Button** : This button is click based button. When this button is clicked we will see the Insertion sort algorithm in action.
+
+3. **Bubble Sort Button** : This button is click based button. When this button is clicked we will see the Bubble sort algorithm in action. The red colour is used to shows on which node we currently are and how exactly the swaping is done.
+
+4. **Array Size Button** : This button is slide based button.Slider range is between 0-100. If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. Accordingly the size of the array will be shown.
+
+5. **Speed Button** : This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. After selecting we will be able to visualize animation at the chosen speed.
 
 ## Methadology Flow Chart
 ![image](https://user-images.githubusercontent.com/68697068/134036183-328ce9a6-9815-47a0-974f-6c5af1551ab1.png)
