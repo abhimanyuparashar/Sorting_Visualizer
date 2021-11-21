@@ -27,7 +27,7 @@ The Web page is divided into 2 parts:
 
 5. **Speed Button** : This button is slide based button.Slider range is between 0-100.If we will slide the pointer to the left it will decrease and if we will slide the pointer to the right it will increase. After selecting we will be able to visualize animation at the chosen speed.
 
-## Methadology Flow Chart
+## Methodology Flow Chart
 ![image](https://user-images.githubusercontent.com/68697068/134036183-328ce9a6-9815-47a0-974f-6c5af1551ab1.png)
 
 ## I/O Screenshots
